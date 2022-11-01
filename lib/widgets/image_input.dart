@@ -7,7 +7,9 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 
 class ImageInput extends StatefulWidget {
-  const ImageInput({super.key});
+  final Function onSelectImage;
+
+  ImageInput(this.onSelectImage);
 
   @override
   State<ImageInput> createState() => _ImageInputState();
@@ -26,6 +28,8 @@ class _ImageInputState extends State<ImageInput> {
     setState(() {
       _storedImage = File(imageFile.path);
     });
+//para armazenar a img numa pasta
+    //widget.onSelectImage(...);
   }
 
   @override
