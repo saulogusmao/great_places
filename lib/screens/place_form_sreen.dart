@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
-import 'package:great_places/provider/grate_places.dart';
+import 'package:great_places/provider/great_places.dart';
 import 'package:great_places/utils/app_routes.dart';
 import 'package:great_places/widgets/image_input.dart';
 import 'package:provider/provider.dart';
