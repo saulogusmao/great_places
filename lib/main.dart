@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:great_places/provider/grate_places.dart';
 import 'package:great_places/screens/place_form_sreen.dart';
 import 'package:great_places/screens/places_list_screen.dart';
+import 'package:provider/provider.dart';
 
 import 'utils/app_routes.dart';
 
@@ -14,20 +16,23 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Flutter Demo',
-      theme: ThemeData(
-        primarySwatch: Colors.indigo,
-        colorScheme: ColorScheme.fromSwatch().copyWith(
-          primary: Colors.indigo,
-          secondary: Colors.amber,
+    return ChangeNotifierProvider(
+      create: (context) => GreatPlaces(),
+      child: MaterialApp(
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          primarySwatch: Colors.indigo,
+          colorScheme: ColorScheme.fromSwatch().copyWith(
+            primary: Colors.indigo,
+            secondary: Colors.amber,
+          ),
+          visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        visualDensity: VisualDensity.adaptivePlatformDensity,
+        home: PlacesListScreen(),
+        routes: {
+          AppRoutes.PLACE_FORM: (context) => PlaceFormScreen(),
+        },
       ),
-      home: PlacesListScreen(),
-      routes: {
-        AppRoutes.PLACE_FORM: (context) => PlaceFormScreen(),
-      },
     );
   }
 }
