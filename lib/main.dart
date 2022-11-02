@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
         ),
         home: PlacesListScreen(),
         routes: {
-          AppRoutes.PLACE_FORM: (context) => PlaceFormScreen(),
+          AppRoutes.placeForm: (context) => PlaceFormScreen(),
         },
       ),
     );

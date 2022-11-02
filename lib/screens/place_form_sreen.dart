@@ -8,6 +8,8 @@ import 'package:great_places/utils/app_routes.dart';
 import 'package:great_places/widgets/image_input.dart';
 import 'package:provider/provider.dart';
 
+import '../widgets/location_input.dart';
+
 class PlaceFormScreen extends StatefulWidget {
   const PlaceFormScreen({super.key});
 
@@ -61,14 +63,14 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
                       ),
                     ),
                     SizedBox(height: 10),
-                    ImageInput(this._selectImage),
+                    ImageInput(_selectImage),
+                    LocationInput(),
                   ],
                 ),
               ),
             ),
           ),
           ElevatedButton.icon(
-            onPressed: _submitForm,
             icon: Icon(Icons.add),
             label: Text('Adicionar'),
             style: ElevatedButton.styleFrom(
@@ -78,6 +80,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               shape: ContinuousRectangleBorder(),
             ),
+            onPressed: _submitForm,
           ),
         ],
       ),
