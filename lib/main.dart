@@ -3,7 +3,7 @@ import 'package:great_places/provider/great_places.dart';
 import 'package:great_places/screens/place_form_sreen.dart';
 import 'package:great_places/screens/places_list_screen.dart';
 import 'package:provider/provider.dart';
-
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'utils/app_routes.dart';
 
 void main() {

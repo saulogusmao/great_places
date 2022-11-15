@@ -1,3 +1,5 @@
+import 'package:google_maps_flutter/google_maps_flutter.dart';
+
 const GOOGLE_API_KEY = 'AIzaSyA9tsqUTnhFFar__HX0iCmt7_FXskTkMvw';
 
 class LocationUtil {

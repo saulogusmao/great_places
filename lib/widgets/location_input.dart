@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:great_places/utils/location_util.dart';
 import 'package:location/location.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class LocationInput extends StatefulWidget {
   const LocationInput({Key? key}) : super(key: key);
