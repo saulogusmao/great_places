@@ -43,6 +43,14 @@ class _MapScreenState extends State<MapScreen> {
           zoom: 13,
         ),
         onTap: widget.isReadOnly ? null : _selectPosition,
+        markers: _pickedPosition == null
+            ? {}
+            : {
+                Marker(
+                  markerId: MarkerId('p1'),
+                  position: _pickedPosition!,
+                ),
+              }, //'par de chaves' para o set, par de 'barra' para lista
       ),
     );
   }
