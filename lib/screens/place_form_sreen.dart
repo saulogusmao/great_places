@@ -24,11 +24,15 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
   LatLng? _pickedPosition;
 
   void _selectImage(File pickedImage) {
-    _pickedImage = pickedImage;
+    setState(() {
+      _pickedImage = pickedImage;
+    });
   }
 
   void _selectPosition(LatLng position) {
-    _pickedPosition = position;
+    setState(() {
+      _pickedPosition = position;
+    });
   }
 
   bool _isValidForm() {
@@ -91,7 +95,7 @@ class _PlaceFormScreenState extends State<PlaceFormScreen> {
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
               shape: ContinuousRectangleBorder(),
             ),
-            onPressed: _submitForm,
+            onPressed: _isValidForm() ? _submitForm : null,
           ),
         ],
       ),
