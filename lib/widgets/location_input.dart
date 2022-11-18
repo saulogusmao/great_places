@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:great_places/screens/map_screen.dart';
 import 'package:great_places/utils/location_util.dart';
+import 'package:great_places/widgets/image_input.dart';
 import 'package:location/location.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 class LocationInput extends StatefulWidget {
-  const LocationInput({Key? key}) : super(key: key);
+  final Function onSelectPosition;
+  LocationInput(this.onSelectPosition);
 
   @override
   State<LocationInput> createState() => _LocationInputState();
@@ -34,7 +36,8 @@ class _LocationInputState extends State<LocationInput> {
     );
     if (selectedPosition == null) return;
     //...terminar
-    print(selectedPosition.latitude);
+    // print(selectedPosition.latitude);
+    widget.onSelectPosition(selectedPosition);
   }
 
   @override
