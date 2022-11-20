@@ -50,7 +50,12 @@ class PlacesListScreen extends StatelessWidget {
                                       .itemByIndex(i)
                                       .location!
                                       .address!),
-                                  onTap: () {},
+                                  onTap: () {
+                                    Navigator.of(context).pushNamed(
+                                      AppRoutes.placeDetail,
+                                      arguments: greatPlaces.itemByIndex(i),
+                                    );
+                                  },
                                 ),
                               ),
                   ),
